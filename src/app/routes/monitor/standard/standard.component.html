@@ -1,0 +1,103 @@
+<div class="content-heading">
+    <div>Create New Monitor
+    </div>
+</div>
+
+<!-- START row-->
+<div class="row">
+    <div class="col-md-6">
+        <!-- START card-->
+        <div class="card card-default">
+            <div class="card-header">Add Monitor</div>
+            <div class="card-body">
+                <form class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Application Name</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="app name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Application Site URL</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="app url" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Method Type</label>
+                        <div class="col-xl-10">
+                            <select class="custom-select custom-select-sm">
+                                <option selected="">HTTP Method</option>
+                                <option value="1">GET</option>
+                                <option value="2">POST</option>
+                                <option value="3">PUT</option>
+                                <option value="3">DELETE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Request Body</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="request body for post/put http methods" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Group Name</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="group name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Job Name</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="job name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">CRON</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="schedule cron" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Run in Every</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="time" />
+                            <select class="custom-select custom-select-sm">
+                                <option selected="">Interval</option>
+                                <option value="1">Seconds</option>
+                                <option value="2">Minutes</option>
+                                <option value="3">Hours</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Email/Group Mail</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="email" placeholder="email distro" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label"></label>
+                        <div class="col-xl-10">
+                            <div class="checkbox c-checkbox">
+                                <label>
+                                    <input type="checkbox" checked="" />
+                                    <span class="fa fa-check"></span>Failure Notification</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label"></label>
+                        <div class="col-xl-10">
+                            <button class="btn btn-sm btn-secondary" type="submit">Save Monitor</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END card-->
+    </div>
+</div>
+<!-- END row-->
