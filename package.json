@@ -5,9 +5,11 @@
   "author": "@themicon_co",
   "license": "https://wrapbootstrap.com/help/licenses",
   "private": true,
+  "repository": "https://github.com/jabreuar/dssat-angular.git",
   "scripts": {
     "electron": "ng build && electron .",
     "electron-aot": "ng build --prod && electron .",
+    "app-release-ci": "build --em.main=main.js --publish=never",
     "ng": "ng",
     "install": "npm run napa",
     "start": "ng serve",
@@ -20,6 +22,66 @@
     "napa": "napa"
   },
   "main": "main.js",
+  "build": {
+    "appId": "net.dssat.interface",
+    "productName": "DSSAT-multiplatform",
+    "artifactName": "${productName}-${version}-${os}${arch}.${ext}",
+    "directories": {
+      "output": "builds",
+      "buildResources": "dist"
+    },
+    "files": [
+      "**/*",
+      "icons/*",
+      "node_modules/**/*",
+      "assets/*",
+      "package.json"
+    ],
+    "extraResources": [
+      "*.xml",
+      "images/**/*"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "runAfterFinish": true
+    },
+    "publish": [
+      {
+        "provider": "github"
+      }
+    ],
+    "win": {
+      "icon": "icons/dssat_logo_176x47_nEf_icon.ico",
+      "target": [
+        {
+          "arch": [
+            "x64"
+          ],
+          "target": "nsis"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "icons/dssat_logo_176x47_nEf_icon.icns",
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "pkg",
+        "dmg"
+      ]
+    },
+    "linux": {
+      "icon": "icons/dssat_logo_176x47_nEf_icon.ico",
+      "target": [
+        "AppImage",
+        "deb",
+        "tar.gz"
+      ],
+      "category": "Science"
+    }
+  },
   "napa": {
     "jquery.flot.spline": "miloszfalinski/jquery.flot.spline",
     "ika.jvectormap": "kakirigi/ika.jvectormap",
@@ -88,7 +150,11 @@
     "ts-helpers": "1.1.1",
     "weather-icons": "github:erikflowers/weather-icons",
     "web-animations-js": "2.2.1",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.11",
+    "electron-settings": "^3.1.1",
+    "electron-updater": "^2.18.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.6.1",
@@ -102,6 +168,8 @@
     "@types/node": "8.9.4",
     "codelyzer": "4.2.1",
     "electron": "^3.0.8",
+    "electron-builder": "^19.45.5",
+    "electron-devtools-installer": "^2.2.0",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "1.7.1",

@@ -19,9 +19,8 @@ const actionMapping: IActionMapping = {
     }
 };
 
-
 @Component({
-    selector: '[app-navtree]',
+    selector: 'app-navtree',
     templateUrl: './navtree.component.html',
     styleUrls: ['./navtree.component.scss'],
     encapsulation: ViewEncapsulation.None
@@ -56,7 +55,6 @@ export class NavtreeComponent implements OnInit {
         setTimeout(() => {
             this.nodes = [
                 {
-
                     expanded: true,
                     name: 'root expanded',
                     subTitle: 'the root',
