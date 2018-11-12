@@ -56,14 +56,53 @@ export class NavtreeComponent implements OnInit {
             this.nodes = [
                 {
                     expanded: true,
-                    name: 'root expanded',
+                    name: 'Crops',
                     subTitle: 'the root',
                     children: [
                         {
-                            name: 'child1',
+                            name: 'Cerals',
                             subTitle: 'a good child',
-                            hasChildren: false
-                        }, {
+                            hasChildren: false,
+                            children: [
+                                {
+                                    uuid: 1001,
+                                    name: 'Barley',
+                                    subTitle: 'subsub',
+                                    hasChildren: false
+                                },
+                                {
+                                    uuid: 1001,
+                                    name: 'Maize',
+                                    subTitle: 'subsub',
+                                    hasChildren: false
+                                },
+                                {
+                                    uuid: 1001,
+                                    name: 'Pearl Millet',
+                                    subTitle: 'subsub',
+                                    hasChildren: false
+                                },
+                                {
+                                    uuid: 1001,
+                                    name: 'Rice',
+                                    subTitle: 'subsub',
+                                    hasChildren: false
+                                },
+                                {
+                                    uuid: 1001,
+                                    name: 'Grain Sorghum',
+                                    subTitle: 'subsub',
+                                    hasChildren: false
+                                },
+                                {
+                                    uuid: 1001,
+                                    name: 'Wheat',
+                                    subTitle: 'subsub',
+                                    hasChildren: false
+                                }
+                            ]
+                        }, 
+                        {
 
                             name: 'child2',
                             subTitle: 'a bad child',
