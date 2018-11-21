@@ -2,9 +2,17 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
+const api = require('./server');
+
 let win
 
 function createWindow () {
+  try {
+    api();  
+  } catch (error) {
+    console.log(error);
+  }
+  
   win = new BrowserWindow({show: false})
 
   // load the dist folder from Angular

@@ -1,5 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TreeNode, TREE_ACTIONS, KEYS, IActionMapping } from 'angular-tree-component';
+import { DSSATClientService } from '../../dssatclient.service';
+
+//import * as childProcess from 'child_process';
+//import * as jdssat from 'jdssat';
+
+//var jdssat = require('jdssat')
+
+declare var jquery:any;
+declare var $ :any;
 
 const actionMapping: IActionMapping = {
     mouse: {
@@ -51,7 +60,7 @@ export class NavtreeComponent implements OnInit {
         console.log(msg);
     }
 
-    constructor() {
+    constructor(private _dssatClient: DSSATClientService) {
         setTimeout(() => {
             this.nodes = [
                 {
@@ -522,6 +531,9 @@ export class NavtreeComponent implements OnInit {
 
     go($event) {
         $event.stopPropagation();
-        alert('this method is on the navtree component');
+        this._dssatClient.openExternalTool().subscribe((data: {}) => {
+            console.log(data);
+            alert(data);
+          });
     }
 }
